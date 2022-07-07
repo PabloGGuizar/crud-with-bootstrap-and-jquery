@@ -2,9 +2,9 @@ import { getData } from './data.js';
 
 export function readClients() {
   let clients =  getData();
-
+  
+  let template = '';
   if (clients.length > 0) {
-    let template = '';
     clients.forEach(client => {
       template += `
         <tr>
@@ -23,7 +23,6 @@ export function readClients() {
         </tr>
       `;
     });
-
-    $('#clients').html(template);
   }
+  $('#clients').html(template);
 }
